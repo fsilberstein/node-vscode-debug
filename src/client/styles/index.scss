@@ -1,0 +1,7 @@
+@import './imports/_variables';
+
+.layout__large-container--centered {
+  min-width: $minWidth;
+  max-width: $maxWidth;
+  min-height: $minHeight;
+}

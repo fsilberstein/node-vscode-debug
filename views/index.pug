@@ -1,0 +1,8 @@
+extends _shared/layout
+
+block head
+  script(defer=true src="/public/build/index.js")
+
+block content
+  .layout__large-container--centered
+    button#debug-button= 'Click here to debug'

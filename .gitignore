@@ -1,0 +1,19 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Build
+build
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Various
+.DS_Store
+
+# Chrome debug data
+.vscode/chrome
