@@ -1,0 +1,66 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch",
+        "program": "${workspaceRoot}/src/server/app.js"
+      },
+      {
+        "name": "Launch via NPM",
+        "type": "node",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": [
+            "run-script", "debug"
+        ],
+        "sourceMaps": true,
+        "smartStep": true,
+        "port": 5858,
+        "skipFiles": [
+            "node_modules/**"
+        ]
+      },
+      {
+        "name": "Chrome",
+        "type": "chrome",
+        "request": "launch",
+        "webRoot": "${workspaceRoot}",
+        "url": "http://localhost:3000",
+        "userDataDir": "${workspaceRoot}/.vscode/chrome",
+        "sourceMaps": true,
+        "smartStep": true,
+        "internalConsoleOptions": "openOnSessionStart",
+        "skipFiles": [
+            "node_modules/**"
+        ],
+        "sourceMapPathOverrides": {
+            "webpack:///*": "${webRoot}/*"
+        }
+      },
+      {
+        "type": "chrome",
+        "request": "attach",
+        "name": "Attach Chrome",
+        "port": 9222,
+        "webRoot": "${workspaceRoot}",
+        "sourceMaps": true,
+        "smartStep": true,
+        "internalConsoleOptions": "openOnSessionStart",
+        "skipFiles": [
+            "node_modules/**"
+        ],
+        "sourceMapPathOverrides": {
+            "webpack:///*": "${webRoot}/*"
+        }
+      }
+    ],
+    "compounds": [
+      {
+        "name": "Node + Client",
+        "configurations": ["Launch via NPM", "Chrome"]
+      }
+    ]
+}

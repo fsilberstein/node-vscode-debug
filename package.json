@@ -10,7 +10,7 @@
     "webpack": "webpack",
     "lint": "./node_modules/.bin/eslint \"./src/**/*.js\" \"./test/**/*.js\"",
     "start": "node ./src/server/app.js",
-    "debug": "node --debug-brk=5858 ./src/server/server.js & webpack -p --watch"
+    "debug": "webpack --watch & node --debug-brk=5858 ./src/server/app.js ; rm npm-debug.log*"
   },
   "repository": {
     "type": "git",
